@@ -8,8 +8,8 @@ let rec append a b =
     | [] -> b
     | h :: t -> h :: append t b;;
 
-let rec replace lista n var counter =
-  match lista with
+let rec replace list n var counter =
+  match list with
   | [] -> raise (Failure "empty list replace")
   | h::t -> if counter = n then var::t 
   else 
@@ -80,6 +80,5 @@ let w = [
 
 
 let cw = init_cw (length w) [1];;
-let cl = [1];;
 
 let colored_graph = coloring w cw 0;;
